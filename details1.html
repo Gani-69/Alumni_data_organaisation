@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registered Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f4f4f4;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .back-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registered Students</h2>
+  <table id="studentsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Batch</th>
+        <th>Profession</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <a href="home1.html" class="back-btn">⬅ Back to Home</a>
+
+  <script>
+    async function loadStudents() {
+      try {
+        const res = await fetch("http://localhost:4000/api/students"); // ✅ backend API
+        const data = await res.json();
+        const tbody = document.querySelector("#studentsTable tbody");
+
+        tbody.innerHTML = "";
+        data.forEach(s => {
+          const row = `<tr>
+                         <td>${s.name}</td>
+                         <td>${s.email}</td>
+                         <td>${s.batch}</td>
+                         <td>${s.profession}</td>
+                       </tr>`;
+          tbody.innerHTML += row;
+        });
+      } catch (err) {
+        console.error("Error loading students:", err);
+        alert("⚠ Unable to fetch student details. Is backend running?");
+      }
+    }
+
+    loadStudents();
+  </script>
+</body>
+</html>

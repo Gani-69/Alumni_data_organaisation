@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events - Lendi Alumni Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 1000px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #f1c40f;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #f8f9fa;
+    }
+
+    /* Events Grid */
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px 20px;
+    }
+    .event-card {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 12px;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+    .event-card h3 {
+      color: #ffdd59;
+      margin-bottom: 10px;
+    }
+    .event-card p {
+      color: #f8f9fa;
+    }
+
+    /* Past Events Section */
+    .past-events img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .past-events img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-warning" href="index1.html">Lendi Alumni Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="home1.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery1.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events1.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="about1.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact1.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="register1.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="login1.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="container">
+    <div class="hero">
+      <h1>Alumni Events</h1>
+      <p>Reconnect, Network, and Celebrate with the Lendi Family</p>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="container">
+    <h2 class="text-center text-warning mb-4">Upcoming Events</h2>
+    <div class="events">
+      <div class="event-card">
+        <h3>Alumni Meet 2025</h3>
+        <p><strong>Date:</strong> December 15, 2025</p>
+        <p><strong>Venue:</strong> Lendi Auditorium</p>
+        <p>Join us for the annual gathering of alumni, featuring networking sessions, cultural events, and guest talks.</p>
+      </div>
+      <div class="event-card">
+        <h3>Career Guidance Webinar</h3>
+        <p><strong>Date:</strong> October 20, 2025</p>
+        <p><strong>Mode:</strong> Online (Zoom)</p>
+        <p>Industry experts and alumni share career opportunities, interview prep, and skill-building strategies.</p>
+      </div>
+      <div class="event-card">
+        <h3>Startup Showcase</h3>
+        <p><strong>Date:</strong> November 10, 2025</p>
+        <p><strong>Venue:</strong> Innovation Lab, Lendi</p>
+        <p>Alumni entrepreneurs present their startups, inspiring the next generation of innovators.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Past Events -->
+  <div class="container mt-5">
+    <h2 class="text-center text-warning mb-4">Past Events Highlights</h2>
+    <div class="row g-3 past-events">
+      <div class="col-md-4"><img src="https://via.placeholder.com/400x250.png?text=Alumni+Meet+2024" alt="Alumni Meet"></div>
+      <div class="col-md-4"><img src="https://via.placeholder.com/400x250.png?text=Webinar+2023" alt="Webinar"></div>
+      <div class="col-md-4"><img src="https://via.placeholder.com/400x250.png?text=Sports+Meet+2022" alt="Sports Meet"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
